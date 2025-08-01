@@ -1,4 +1,12 @@
 #!/usr/bin/env bash
+# Cursor IDE Installation Script
+# Version: 1.3.8
+# Last Updated: August 2025
+# Tested On: Ubuntu 22.04, 24.04
+#
+# This script installs Cursor IDE on Ubuntu/Debian systems with
+# comprehensive error handling and rollback capabilities.
+
 set -e
 
 # Configuration

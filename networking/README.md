@@ -1,6 +1,6 @@
 # Ubuntu Server 24.04.2 LTS (Raspberry Pi 5) Networking Automation
 
-**Script:** `rpi5_net_setup.sh`  
+**Script:** `rpi5_setup.sh`  
 **Last updated:** July 31, 2025
 
 This README explains how to use the rollback-enabled automation script that brings a fresh Ubuntu Server (RPi 5) online quickly, manages Wi‑Fi via NetworkManager, and **prefers Ethernet** when both Ethernet and Wi‑Fi are available. It also describes the rollback options if something goes wrong.
@@ -48,8 +48,8 @@ If any step fails, you can **rollback EVERYTHING** or **rollback to the LAST SUC
 ## Quick start (interactive)
 
 ```bash
-chmod +x rpi5_net_setup.sh
-sudo ./rpi5_net_setup.sh
+chmod +x rpi5_setup.sh
+sudo ./rpi5_setup.sh
 ```
 
 - The script will **prompt** for missing values (Wi‑Fi SSID/PSK, hidden flag).  
@@ -59,7 +59,7 @@ sudo ./rpi5_net_setup.sh
 ## Non‑interactive usage (hands‑free)
 
 ```bash
-sudo ./rpi5_net_setup.sh   --eth-if enabcm6e0   --wifi-if wlan0   --ssid "YourSSID"   --psk "YourWiFiPassword"   --on-error partial   --yes
+sudo ./rpi5_setup.sh   --eth-if enabcm6e0   --wifi-if wlan0   --ssid "YourSSID"   --psk "YourWiFiPassword"   --on-error partial   --yes
 ```
 
 - `--yes` suppresses prompts.  
@@ -193,3 +193,9 @@ Running the script multiple times is safe; it creates a new timestamped snapshot
 ## Uninstall / revert to original behavior
 
 Use the **rollback EVERYTHING** option from your latest run’s prompt, or perform a **manual restore** from the snapshot folder you want (see “Manual restore” above).
+
+---
+
+**Last Updated**: August 2025  
+**Cursor Version**: 1.3.8  
+**Tested On**: Ubuntu 24.04, Raspberry Pi 5
